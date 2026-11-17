@@ -1,0 +1,34 @@
+# Sessions 2-3. Runs under systemd (prakriti-pipeline.service): survives SSH drops,
+# crashes and reboots. Finished stages are skipped; each stage resumes internally.
+stages:
+  - name: s2_textgen
+    cmd: VLLM_USE_FLASHINFER_SAMPLER=0 GPU_UTIL=0.85 COVER_TOP=20000 envs/llm/bin/python -m prakriti.s2.textgen 30000
+  - name: s2_rasa
+    cmd: CUDA_VISIBLE_DEVICES= envs/eval/bin/python -m prakriti.s2.real_rasa
+  - name: s2_synth
+    cmd: MAYA_SEATS=64 envs/maya/bin/python -m prakriti.s2.synth
+  - name: s2_verify   # 2 shards in parallel on the GPU
+    cmd: >-
+      export LD_LIBRARY_PATH=$(cat envs/eval/cuda12_libs);
+      SHARD=0/2 envs/eval/bin/python -m prakriti.s2.verify & a=$!;
+      SHARD=1/2 envs/eval/bin/python -m prakriti.s2.verify & b=$!;
+      wait $a && wait $b
+  - name: s2_pron     # 2 shards in parallel on the GPU
+    cmd: >-
+      envs/eval/bin/python -m prakriti.s2.pron_manifest &&
+      { SHARD=0/2 envs/train/bin/python -m prakriti.s2.pron_check $PRAKRITI_WORK/s2/pron_manifest.jsonl $PRAKRITI_WORK/s2/pron & a=$!;
+        SHARD=1/2 envs/train/bin/python -m prakriti.s2.pron_check $PRAKRITI_WORK/s2/pron_manifest.jsonl $PRAKRITI_WORK/s2/pron & b=$!;
+        wait $a && wait $b; }
+  - name: s3_build
+    cmd: envs/train/bin/python -m prakriti.s2.build_train
+  - name: s3_train    # ~5 h: batch 6; stage 1 4x930 steps, stage 2 6x530 steps (same audio seen as 8x700 / 8x400); resumable, extendable
+    cmd: S1_EPOCHS=4 S1_STEPS=930 S2_EPOCHS=6 S2_STEPS=530 S2_JOINT=3 S2_BATCH=4 S2_SLM_MAXLEN=400 bash prakriti/s3/train.sh
+    retries: 3
+  - name: s4_export   # model + voice and voice x emotion style packs
+    cmd: envs/kokoro/bin/python -m prakriti.s3.finish
+  - name: s4_eval     # render the evaluation set with every voice, measure speed
+    cmd: envs/kokoro/bin/python -m prakriti.s3.evaluate
+  - name: s4_score
+    cmd: LD_LIBRARY_PATH=$(cat envs/eval/cuda12_libs) envs/eval/bin/python -m prakriti.s1.score
+  - name: s4_report
+    cmd: envs/eval/bin/python -m prakriti.s1.report

@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Noto+Sans+Devanagari:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1440px;height:900px;overflow:hidden}
+  body{box-sizing:border-box;padding:70px 90px;font-family:Manrope,sans-serif;
+    background:radial-gradient(900px 600px at 80% 0%,rgba(63,143,107,.22),transparent 60%),linear-gradient(160deg,#f6f2ea,#e9e4d8)}
+  .win{background:#101814;border-radius:14px;box-shadow:0 50px 100px rgba(20,35,28,.35),0 0 0 1px rgba(20,35,28,.12);overflow:hidden;height:100%}
+  .bar{height:44px;background:#18231d;display:flex;align-items:center;padding:0 18px;gap:9px;color:#8b978f;font-size:15px}
+  .dot{width:13px;height:13px;border-radius:50%}.title{margin-left:16px;font-family:'JetBrains Mono',monospace}
+  pre{margin:0;padding:26px 32px;font-family:'JetBrains Mono','Noto Sans Devanagari',monospace;font-size:15.5px;line-height:1.75;color:#dfe6e0;white-space:pre}
+  .p{color:#7fc8a2}.c{color:#e8eee9}.s{color:#f4b860;font-family:'Noto Sans Devanagari','JetBrains Mono'}.d{color:#7d8a82}.g{color:#7fc8a2}.v{color:#f3efe6;font-weight:500}
+</style></head><body>
+<div class="win">
+  <div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="title">~/sahayak — bash</span></div>
+<pre><span class="p">priya@kestrel:~/sahayak$</span> <span class="c">prakriti --list-voices</span>
+<span class="v">Ahana     </span> female  <span class="d">emotions: neutral, angry, calm, empathetic, excited, fear, happy, sad, serious, surprised, whisper</span>
+<span class="v">Anirban   </span> male    <span class="d">emotions: neutral, angry, calm, empathetic, excited, fear, happy, sad, serious, surprised, whisper</span>
+<span class="v">Charvi    </span> female  <span class="d">emotions: neutral, angry, calm, empathetic, excited, fear, happy, sad, serious, surprised, whisper</span>
+<span class="v">Malini    </span> female  <span class="d">emotions: neutral, angry, calm, empathetic, excited, fear, happy, sad, serious, surprised, whisper</span>
+<span class="v">Nakul     </span> male    <span class="d">emotions: neutral, angry, calm, empathetic, excited, fear, happy, sad, serious, surprised, whisper</span>
+<span class="v">Rasa_F    </span> female  <span class="d">emotions: neutral, angry, fear, happy, sad, serious, surprised</span>
+<span class="v">Rasa_M    </span> male    <span class="d">emotions: neutral, angry, fear, happy, sad, serious, surprised</span>
+<span class="v">Siddhant  </span> male    <span class="d">emotions: neutral, angry, calm, empathetic, excited, fear, happy, sad, serious, surprised, whisper</span>
+<span class="v">Vaidehi   </span> female  <span class="d">emotions: neutral, angry, calm, empathetic, excited, fear, happy, sad, serious, surprised, whisper</span>
+<span class="v">Vasant    </span> male    <span class="d">emotions: neutral, angry, calm, empathetic, excited, fear, happy, sad, serious, surprised, whisper</span>
+
+<span class="p">priya@kestrel:~/sahayak$</span> <span class="c">prakriti <span class="s">"आपका order confirm हो गया है, delivery कल शाम तक हो जाएगी।"</span> -v Rasa_F -o order.wav</span>
+<span class="g">wrote order.wav (4.1 s)</span>
+
+<span class="p">priya@kestrel:~/sahayak$</span> <span class="c">prakriti <span class="s">"अरे वाह, ये तो बहुत अच्छी ख़बर है!"</span> -v Anirban -e happy -i 0.8 -o khabar.wav</span>
+<span class="g">wrote khabar.wav (2.6 s)</span>
+
+<span class="p">priya@kestrel:~/sahayak$</span> <span class="c">prakriti <span class="s">"Your train to Pune leaves at 7:30 from platform 2."</span> -v Malini -o train.wav</span>
+<span class="g">wrote train.wav (3.3 s)</span>
+<span class="p">priya@kestrel:~/sahayak$</span> <span class="c">▍</span></pre>
+</div>
+</body></html>

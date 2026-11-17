@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Training workspace, environments and third-party code (recreated by server/setup.sh)
+work/
+envs/
+third_party/
+
+# Model weights and audio live on Hugging Face, not in git
+model/
+hf_release/
+*.pth
+*.pt
+*.safetensors
+*.onnx
+*.rknn
+*.wav
+*.mp3
+*.ogg
+
+# Generated reports (contain embedded audio)
+reports/
+
+# Secrets and local settings
+.env
+*.pem
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/

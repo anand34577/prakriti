@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+Devanagari:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1600px;height:400px;overflow:hidden}
+  body{font-family:Manrope,system-ui,sans-serif;color:#14231c;box-sizing:border-box;padding:0 96px;
+    background:
+      radial-gradient(700px 380px at 82% 30%,rgba(63,143,107,.22),transparent 65%),
+      radial-gradient(520px 300px at 8% 110%,rgba(244,184,96,.22),transparent 60%),
+      #f6f2ea;
+    display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:56px;position:relative}
+  body:before{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(20,35,28,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(20,35,28,.05) 1px,transparent 1px);
+    background-size:40px 40px;mask-image:radial-gradient(900px 400px at 70% 40%,#000,transparent)}
+  .brand{display:flex;align-items:center;gap:22px;position:relative}
+  h1{font-size:96px;letter-spacing:-.035em;margin:0;font-weight:800;line-height:1}
+  .dev{font-family:'Noto Sans Devanagari';font-weight:500;font-size:34px;color:#b8641a;margin:14px 0 18px 2px}
+  p{font-size:27px;line-height:1.4;color:#4b5a52;margin:0;max-width:640px;position:relative}
+  .card{position:relative;border:1px solid rgba(20,35,28,.12);background:#13201a;border-radius:18px;
+    box-shadow:0 30px 70px rgba(20,35,28,.28);color:#f3efe6;padding:26px 30px;font-family:'JetBrains Mono',monospace;font-size:17px;line-height:1.7}
+  .prompt{color:#7fc8a2}.str{color:#f4b860}.dim{color:#7d8a82}.hi{font-family:'Noto Sans Devanagari','JetBrains Mono';}
+  .wave{display:flex;align-items:center;gap:4px;height:58px;margin-top:14px}
+  .wave i{display:block;width:6px;border-radius:3px;background:linear-gradient(#f4b860,#3f8f6b)}
+</style></head><body>
+  <div>
+    <div class="brand"><svg width="92" height="92" viewBox="0 0 64 64"><defs><linearGradient id="l" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1f5a44"/><stop offset="1" stop-color="#3f8f6b"/></linearGradient></defs><path d="M10 54 C10 26 28 8 56 8 C56 36 38 54 10 54 Z" fill="url(#l)"/><path d="M14 50 L20 44 L23 47 L27 37 L31 43 L35 30 L39 36 L43 24 L47 28 L52 13" fill="none" stroke="#f4b860" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><h1>Prakriti</h1></div>
+    <div class="dev">प्रकृति · बोलने की सहज आवाज़</div>
+    <p>Text-to-speech for Hindi, Hinglish and English,<br>with 10 voices and emotion styles.</p>
+  </div>
+  <div class="card">
+    <div><span class="prompt">$</span> prakriti <span class="str hi">"कल मेरी office में meeting है।"</span> -v Rasa_F -e happy</div>
+    <div class="dim">wrote prakriti.wav (2.9 s)</div>
+    <div class="wave" id="w"></div>
+  </div>
+<script>
+  const w=document.getElementById('w');const h=[10,18,30,16,42,28,50,22,38,54,34,20,44,26,52,30,14,36,24,48,20,32,12,40,28,46,34,18,50,26,38,16,44,30,22,48,36,14,32,24,42,18,28,12,20,10];
+  h.forEach(x=>{const i=document.createElement('i');i.style.height=x+'px';w.appendChild(i)});
+</script>
+</body></html>

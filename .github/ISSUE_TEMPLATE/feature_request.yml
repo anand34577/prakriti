@@ -1,0 +1,14 @@
+name: Feature request
+description: A new voice, emotion, language feature or runtime target
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What do you want to do that you can't today?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How you imagine it working

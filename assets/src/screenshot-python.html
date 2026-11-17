@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1440px;height:900px;overflow:hidden}
+  body{box-sizing:border-box;padding:70px 90px;font-family:Manrope,sans-serif;
+    background:radial-gradient(900px 600px at 15% 0%,rgba(244,184,96,.22),transparent 60%),linear-gradient(160deg,#f6f2ea,#e9e4d8)}
+  .win{background:#101814;border-radius:14px;box-shadow:0 50px 100px rgba(20,35,28,.35),0 0 0 1px rgba(20,35,28,.12);overflow:hidden;height:100%;display:grid;grid-template-rows:44px 1fr 330px}
+  .bar{background:#18231d;display:flex;align-items:center;padding:0 18px;gap:9px;color:#8b978f;font-size:15px}
+  .dot{width:13px;height:13px;border-radius:50%}.tab{margin-left:18px;font-family:'JetBrains Mono',monospace;color:#dfe6e0;background:#101814;padding:12px 18px 13px;border-radius:8px 8px 0 0;align-self:flex-end}
+  pre{margin:0;padding:22px 30px;font-family:'JetBrains Mono','Noto Sans Devanagari',monospace;font-size:21px;line-height:1.75;color:#dfe6e0;padding-top:30px}
+  .ln{color:#4b5a52;display:inline-block;width:34px}
+  .k{color:#7fc8a2}.s{color:#f4b860;font-family:'Noto Sans Devanagari','JetBrains Mono'}.f{color:#9fd0f0}.cm{color:#6b7a72}.n{color:#e8a87c}
+  .out{border-top:1px solid rgba(255,255,255,.08);background:#0c130f;padding:18px 30px;font-family:'JetBrains Mono',monospace;font-size:18px;color:#a9b4ac;padding-top:26px}
+  .out h4{margin:0 0 12px;font-family:Manrope;font-size:13px;letter-spacing:.12em;color:#6b7a72;font-weight:700}
+  .row{display:grid;grid-template-columns:120px 1fr 110px;align-items:center;gap:18px;margin:16px 0}
+  .wave{display:flex;align-items:center;gap:3px;height:34px}.wave i{display:block;width:4px;border-radius:2px;background:linear-gradient(#f4b860,#3f8f6b)}
+  .t{color:#7fc8a2;text-align:right}
+</style></head><body>
+<div class="win">
+  <div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="tab">assistant.py</span></div>
+<pre><span class="ln">1</span><span class="k">from</span> prakriti.tts <span class="k">import</span> Prakriti
+<span class="ln">2</span><span class="k">import</span> sounddevice <span class="k">as</span> sd
+<span class="ln">3</span>
+<span class="ln">4</span>tts = Prakriti.<span class="f">from_pretrained</span>()
+<span class="ln">5</span>reply = <span class="s">"नमस्ते अर्जुन! आज आपकी तीन meetings हैं। पहली साढ़े दस बजे Kestrel के साथ है।"</span>
+<span class="ln">6</span>
+<span class="ln">7</span><span class="cm"># speak each sentence as soon as it's ready</span>
+<span class="ln">8</span><span class="k">with</span> sd.<span class="f">OutputStream</span>(samplerate=<span class="n">24000</span>, channels=<span class="n">1</span>) <span class="k">as</span> out:
+<span class="ln">9</span>    <span class="k">for</span> chunk <span class="k">in</span> tts.<span class="f">stream</span>(reply, voice=<span class="s">"Anirban"</span>, emotion=<span class="s">"calm"</span>):
+<span class="ln">10</span>        out.<span class="f">write</span>(chunk)</pre>
+  <div class="out"><h4>OUTPUT · STREAMED SENTENCES</h4>
+    <div class="row"><span>sentence 1</span><div class="wave" id="w1"></div><span class="t">0.11 s</span></div>
+    <div class="row"><span>sentence 2</span><div class="wave" id="w2"></div><span class="t">0.12 s</span></div>
+    <div class="row"><span>sentence 3</span><div class="wave" id="w3"></div><span class="t">0.14 s</span></div>
+  </div>
+</div>
+<script>
+  const rnd=s=>{let x=s;return()=>{x=(x*9301+49297)%233280;return x/233280}};
+  [["w1",7,64],["w2",11,92],["w3",5,120]].forEach(([id,seed,n])=>{const r=rnd(seed),w=document.getElementById(id);
+    for(let i=0;i<n;i++){const e=document.createElement('i');e.style.height=(6+Math.abs(Math.sin(i/5))*18+r()*10)+'px';w.appendChild(e)}});
+</script>
+</body></html>

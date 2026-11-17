@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Prakriti">
+  <defs>
+    <linearGradient id="leaf" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#1f5a44"/>
+      <stop offset="1" stop-color="#3f8f6b"/>
+    </linearGradient>
+  </defs>
+  <path d="M10 54 C10 26 28 8 56 8 C56 36 38 54 10 54 Z" fill="url(#leaf)"/>
+  <path d="M14 50 L20 44 L23 47 L27 37 L31 43 L35 30 L39 36 L43 24 L47 28 L52 13"
+        fill="none" stroke="#f4b860" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

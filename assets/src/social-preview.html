@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+Devanagari:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1280px;height:640px;overflow:hidden}
+  body{font-family:Manrope,system-ui,sans-serif;color:#f3efe6;box-sizing:border-box;padding:84px 96px;position:relative;
+    background:
+      radial-gradient(760px 420px at 88% 18%,rgba(63,143,107,.42),transparent 65%),
+      radial-gradient(560px 340px at 0% 105%,rgba(244,184,96,.18),transparent 60%),
+      #0e1512}
+  body:before{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:40px 40px;mask-image:radial-gradient(800px 500px at 70% 40%,#000,transparent)}
+  .brand{display:flex;align-items:center;gap:22px;position:relative}
+  h1{font-size:104px;letter-spacing:-.035em;margin:0;font-weight:800;line-height:1}
+  .dev{font-family:'Noto Sans Devanagari';font-weight:500;font-size:36px;color:#f4b860;margin:22px 0 16px 4px;position:relative}
+  p{font-size:31px;line-height:1.4;color:#b9c4bc;margin:0;max-width:900px;position:relative}
+  .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:44px;position:relative}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:20px;padding:9px 16px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:#dfe6e0}
+  .chip b{color:#7fc8a2;font-weight:500}
+</style></head><body>
+  <div class="brand"><svg width="100" height="100" viewBox="0 0 64 64"><defs><linearGradient id="l" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1f5a44"/><stop offset="1" stop-color="#3f8f6b"/></linearGradient></defs><path d="M10 54 C10 26 28 8 56 8 C56 36 38 54 10 54 Z" fill="url(#l)"/><path d="M14 50 L20 44 L23 47 L27 37 L31 43 L35 30 L39 36 L43 24 L47 28 L52 13" fill="none" stroke="#f4b860" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><h1>Prakriti</h1></div>
+  <div class="dev">प्रकृति · बोलने की सहज आवाज़</div>
+  <p>Text-to-speech for Hindi, Hinglish and English. Runs on a CPU, 82M parameters, Apache-2.0.</p>
+  <div class="chips">
+    <span class="chip"><b>●</b> Rasa_F</span><span class="chip"><b>●</b> Rasa_M</span><span class="chip">Ahana</span>
+    <span class="chip">Anirban</span><span class="chip">Vaidehi</span><span class="chip">Nakul</span>
+    <span class="chip">+4 voices</span><span class="chip">happy · sad · calm · serious</span>
+  </div>
+</body></html>

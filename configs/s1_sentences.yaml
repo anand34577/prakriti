@@ -1,0 +1,88 @@
+# Session 1 evaluation set. Text is already normalized (no digits), so
+# models are compared on speech, not on number reading.
+# lang: hi = Hindi (Devanagari), mix = Hinglish (Devanagari + English words
+# in Latin), rom = romanized Hinglish, en = English.
+plain:
+  - {id: hi01, lang: hi, text: "नमस्ते, आज मौसम बहुत सुहाना है।"}
+  - {id: hi02, lang: hi, text: "क्या आप मुझे बता सकते हैं कि रेलवे स्टेशन कहाँ है?"}
+  - {id: hi03, lang: hi, text: "कमला ने बाज़ार से ताज़ी सब्ज़ियाँ और फल ख़रीदे।"}
+  - {id: hi04, lang: hi, text: "मुझे लगता है कि हमें थोड़ा और इंतज़ार करना चाहिए।"}
+  - {id: hi05, lang: hi, text: "उसने धीरे से दरवाज़ा खोला और अंदर झाँका।"}
+  - {id: hi06, lang: hi, text: "कृपया ध्यान दें, गाड़ी प्लेटफ़ॉर्म नंबर तीन पर आ रही है।"}
+  - {id: hi07, lang: hi, text: "बच्चों ने पार्क में ख़ूब मस्ती की और देर शाम घर लौटे।"}
+  - {id: hi08, lang: hi, text: "अगर तुम समय पर आते, तो हम फ़िल्म देख पाते।"}
+  - {id: hi09, lang: hi, text: "विज्ञान और प्रौद्योगिकी ने हमारी ज़िंदगी आसान बना दी है।"}
+  - {id: hi10, lang: hi, text: "दादी माँ हर रात हमें एक नई कहानी सुनाती थीं।"}
+  - {id: mx01, lang: mix, text: "कल मेरी office में एक important meeting है।"}
+  - {id: mx02, lang: mix, text: "यार, ये movie तो बिल्कुल boring निकली।"}
+  - {id: mx03, lang: mix, text: "आपका order confirm हो गया है, delivery कल तक हो जाएगी।"}
+  - {id: mx04, lang: mix, text: "मैंने तुम्हें WhatsApp पर message भेजा था, check करो।"}
+  - {id: mx05, lang: mix, text: "Battery low है, phone को charging पर लगा दो।"}
+  - {id: mx06, lang: mix, text: "Weekend पर हम सब Goa जाने का plan बना रहे हैं।"}
+  - {id: mx07, lang: mix, text: "Sorry, मैं अभी busy हूँ, थोड़ी देर में call करता हूँ।"}
+  - {id: mx08, lang: mix, text: "इस app का new update बहुत fast और smooth है।"}
+  - {id: ro01, lang: rom, text: "Kya haal hai bhai, sab theek chal raha hai?"}
+  - {id: ro02, lang: rom, text: "Mujhe nahi pata tha ki aaj chhutti hai."}
+  - {id: ro03, lang: rom, text: "Chalo, jaldi karo, warna train chhoot jayegi."}
+  - {id: en01, lang: en, text: "Good morning! Here is your schedule for today."}
+  - {id: en02, lang: en, text: "The quick brown fox jumps over the lazy dog."}
+  - {id: en03, lang: en, text: "I'm not sure that's the right answer, but let me check."}
+  - {id: en04, lang: en, text: "Please remember to carry an umbrella, it might rain later."}
+  - {id: en05, lang: en, text: "Turn left at the next signal, then continue straight."}
+  - {id: en06, lang: en, text: "She whispered the secret, and everyone suddenly went quiet."}
+
+# Each emotion: one Hindi, one Hinglish, one English line whose words fit it,
+# so a judge can tell whether the *voice* carries the emotion.
+emotions:
+  happy:
+    - {lang: hi, text: "अरे वाह, ये तो बहुत ही अच्छी ख़बर है!"}
+    - {lang: mix, text: "Congratulations यार, तुम्हारी job लग गई!"}
+    - {lang: en, text: "That's wonderful, I'm so happy for you!"}
+  sad:
+    - {lang: hi, text: "मुझे बहुत दुख है कि वो अब हमारे बीच नहीं रहे।"}
+    - {lang: mix, text: "आज का दिन बहुत bad था, कुछ भी ठीक नहीं हुआ।"}
+    - {lang: en, text: "I really miss those days, they're never coming back."}
+  angry:
+    - {lang: hi, text: "मैंने तुमसे कितनी बार कहा है, ऐसा मत करो!"}
+    - {lang: mix, text: "ये बिल्कुल unacceptable है, तुमने फिर से deadline miss कर दी!"}
+    - {lang: en, text: "I told you a hundred times, stop doing that!"}
+  excited:
+    - {lang: hi, text: "चलो चलो, जल्दी करो, शो शुरू होने वाला है!"}
+    - {lang: mix, text: "Oh my god, हम सच में concert जा रहे हैं!"}
+    - {lang: en, text: "We actually won the match, I can't believe it!"}
+  calm:
+    - {lang: hi, text: "गहरी साँस लीजिए, और धीरे धीरे छोड़िए।"}
+    - {lang: mix, text: "कोई बात नहीं, आराम से करो, कोई hurry नहीं है।"}
+    - {lang: en, text: "Take your time, there's no need to rush."}
+  whisper:
+    - {lang: hi, text: "धीरे बोलो, बच्चा अभी अभी सोया है।"}
+    - {lang: mix, text: "किसी को बताना मत, ये secret है।"}
+    - {lang: en, text: "Shh, don't tell anyone, it's a surprise."}
+  fear:
+    - {lang: hi, text: "वहाँ अंधेरे में कोई खड़ा है, मुझे डर लग रहा है।"}
+    - {lang: mix, text: "मुझे लगता है कोई हमारा पीछा कर रहा है, please जल्दी चलो।"}
+    - {lang: en, text: "Did you hear that? I think someone's inside the house."}
+  surprised:
+    - {lang: hi, text: "क्या? तुम यहाँ कैसे पहुँच गए?"}
+    - {lang: mix, text: "Seriously? तुमने ये सब अकेले किया?"}
+    - {lang: en, text: "Wait, what? You're getting married?"}
+  empathetic:
+    - {lang: hi, text: "मुझे माफ़ कीजिए, मैं समझ सकती हूँ कि ये आपके लिए कितना मुश्किल है।"}
+    - {lang: mix, text: "Sorry, मुझे वो information नहीं मिली, मैं दोबारा try करती हूँ।"}
+    - {lang: en, text: "I'm really sorry about that, let me see how I can help."}
+  serious:
+    - {lang: hi, text: "सभी यात्रियों से अनुरोध है कि वे अपना सामान अपने पास रखें।"}
+    - {lang: mix, text: "Important notice, कल से office नौ बजे खुलेगा।"}
+    - {lang: en, text: "This is an important announcement regarding your account security."}
+
+# Non-verbal sounds. {tag} is replaced with each teacher's own syntax
+# (Maya: [laughs], Svara: <laugh> ...). Untagged copies are made too.
+nonverbal:
+  - {tag: laugh, lang: mix, text: "{tag} अरे यार, तुम भी ना, कमाल करते हो!"}
+  - {tag: laugh, lang: en, text: "That was hilarious {tag} I can't stop thinking about it."}
+  - {tag: sigh, lang: hi, text: "{tag} चलो, जो हुआ सो हुआ, अब आगे देखते हैं।"}
+  - {tag: sigh, lang: en, text: "{tag} Okay, fine, I'll do it again."}
+  - {tag: hmm, lang: mix, text: "{tag} मुझे सोचने दो, शायद Tuesday ठीक रहेगा।"}
+  - {tag: gasp, lang: en, text: "{tag} Oh no, I forgot my keys inside!"}
+  - {tag: whisper, lang: hi, text: "{tag} सुनो, मैं तुम्हें एक राज़ की बात बताता हूँ।"}
+  - {tag: cry, lang: hi, text: "{tag} मुझे सब बहुत याद आता है।"}

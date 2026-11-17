@@ -1,0 +1,5 @@
+# Used by tests/test_resumable.py: one cheap stage that proves kill-and-resume.
+stages:
+  - name: selftest
+    cmd: python -m prakriti.stages.selftest
+    retries: 1

@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prakriti-tts"
+version = "1.0.0"
+description = "Lightweight, expressive text-to-speech for Hindi, Hinglish and English (82M, Kokoro-based)"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10,<3.13"
+authors = [{ name = "Prakriti contributors" }]
+keywords = ["tts", "text-to-speech", "hindi", "hinglish", "speech-synthesis", "kokoro"]
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
+  "Natural Language :: Hindi",
+  "Natural Language :: English",
+]
+# Inference only. espeak-ng must be installed on the system (apt install espeak-ng,
+# or the Windows installer from github.com/espeak-ng/espeak-ng/releases).
+dependencies = [
+  "torch>=2.1",
+  "kokoro>=0.9.4",
+  "misaki[en]>=0.9.4",
+  "numpy",
+  "soundfile",
+  "safetensors",
+  "huggingface_hub>=0.20",
+]
+
+[project.optional-dependencies]
+train = ["pyyaml", "jiwer", "indic-transliteration", "accelerate", "transformers"]
+dev = ["pytest"]
+
+[project.scripts]
+prakriti = "prakriti.cli:main"
+
+[project.urls]
+Model = "https://huggingface.co/prakriti-tts/prakriti-v1"
+
+[tool.setuptools.packages.find]
+include = ["prakriti*"]
+
+[tool.setuptools.package-data]
+"prakriti.text" = ["lexicon.json"]

@@ -1,0 +1,33 @@
+Prakriti TTS
+Copyright 2026 Prakriti contributors
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This release builds on the following work. Their licenses and attribution
+requirements apply to the respective components.
+
+MODEL
+- Kokoro-82M (hexgrad), Apache-2.0 - https://huggingface.co/hexgrad/Kokoro-82M
+  Prakriti is a fine-tune of Kokoro-82M; the architecture and initial weights are Kokoro's.
+- StyleTTS 2 (Li et al.), MIT - https://github.com/yl4579/StyleTTS2
+- kikiri-tts training recipe (semidark), Apache-2.0 - https://github.com/semidark/kikiri-tts
+
+TRAINING DATA (not redistributed; used to train the weights)
+- Rasa (AI4Bharat), CC-BY-4.0 - https://huggingface.co/datasets/ai4bharat/Rasa
+  Real expressive Hindi studio speech. The voices "Rasa_F" and "Rasa_M" are derived from
+  this dataset's female and male speakers. Attribution: Rasa, AI4Bharat, IIT Madras.
+- Speech synthesized with Maya 2 Native (Maya Research), Apache-2.0 -
+  https://huggingface.co/maya-research/maya2-native
+  The voices Ahana, Vaidehi, Malini, Charvi, Anirban, Nakul, Vasant and Siddhant are
+  derived from audio generated with this model's built-in voices.
+- Training sentences generated with Qwen3-32B-AWQ (Alibaba Qwen), Apache-2.0.
+- Word-frequency list derived from Hindi Wikipedia (only word counts were used).
+
+TOOLS USED IN DATA PREPARATION (not redistributed)
+- wav2vec2-xlsr-53-espeak-cv-ft (Meta), Apache-2.0 - pronunciation verification
+- Whisper large-v3-turbo (OpenAI), MIT - transcript checks
+- emotion2vec+ large - emotion scoring
+- Indic Parler-TTS and Svara-TTS were evaluated as teachers but not used for training data.
+
+RUNTIME DEPENDENCIES (installed separately, not included)
+- kokoro / misaki (hexgrad), Apache-2.0
+- espeak-ng, GPL-3.0 (installed by the user as a system package; not bundled)

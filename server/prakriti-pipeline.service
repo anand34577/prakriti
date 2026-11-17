@@ -1,0 +1,26 @@
+[Unit]
+Description=Prakriti TTS resumable training pipeline
+After=network-online.target
+Wants=network-online.target
+# Give up after 6 failed starts in 2 hours (bug, not a glitch) instead of
+# burning GPU hours in a loop.
+StartLimitIntervalSec=7200
+StartLimitBurst=6
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__REPO__
+Environment=PRAKRITI_WORK=__REPO__/work
+Environment=PYTHONUNBUFFERED=1
+ExecStart=__REPO__/.venv/bin/python -m prakriti.pipeline run
+Restart=on-failure
+RestartSec=120
+StandardOutput=append:__REPO__/work/logs/pipeline.log
+StandardError=append:__REPO__/work/logs/pipeline.log
+# Lets training finish writing its checkpoint before being stopped.
+KillSignal=SIGINT
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target

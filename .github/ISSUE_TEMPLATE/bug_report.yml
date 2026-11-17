@@ -1,0 +1,27 @@
+name: Bug report
+description: Wrong pronunciation, a crash, or audio that sounds broken
+labels: [bug]
+body:
+  - type: textarea
+    id: text
+    attributes:
+      label: Text you gave it
+      description: Paste the exact text, including numbers and punctuation.
+    validations:
+      required: true
+  - type: input
+    id: settings
+    attributes:
+      label: Voice, emotion and other settings
+      placeholder: "voice=Rasa_F emotion=happy intensity=0.8 speed=1.0"
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected to hear, and what you heard
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "prakriti 1.0.0, Ubuntu 22.04, CPU / CUDA 12.8"
