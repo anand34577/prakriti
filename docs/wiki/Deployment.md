@@ -79,5 +79,5 @@ Hugging Face repos can change. In production, pin a revision: copy a commit hash
 **Files and versions** tab.
 
 ```python
-tts = Prakriti.from_pretrained("prakriti-tts/prakriti-v1", revision="<commit hash>")
+tts = Prakriti.from_pretrained("anand-k-maurya/prakriti-v1", revision="<commit hash>")
 ```

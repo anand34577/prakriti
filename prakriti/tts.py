@@ -28,7 +28,7 @@ _SENT = re.compile(r"(?<=[।.!?])\s+|\n+")
 DEVA = re.compile(r"[ऀ-ॿ]")
 
 
-DEFAULT_REPO = "prakriti-tts/prakriti-v1"  # Hugging Face repo id of the release
+DEFAULT_REPO = "anand-k-maurya/prakriti-v1"  # Hugging Face repo id of the release
 WEIGHTS_ST = "prakriti.safetensors"
 WEIGHTS_PTH = "prakriti.pth"
 MODULES = ("bert", "bert_encoder", "predictor", "text_encoder", "decoder")

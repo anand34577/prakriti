@@ -39,7 +39,7 @@ and keeps its speed: ~36x real time on a GPU and ~2.6x real time on 4 CPU thread
 ```bash
 # espeak-ng is required by the phonemizer:
 #   Ubuntu/Debian: sudo apt install espeak-ng      Windows: github.com/espeak-ng/espeak-ng/releases
-pip install "git+https://huggingface.co/prakriti-tts/prakriti-v1"
+pip install "git+https://huggingface.co/anand-k-maurya/prakriti-v1"
 prakriti "कल मेरी office में meeting है।" -v Rasa_F -e happy -o hello.wav
 prakriti --list-voices
 ```
@@ -48,7 +48,7 @@ prakriti --list-voices
 from prakriti.tts import Prakriti
 import soundfile as sf
 
-tts = Prakriti.from_pretrained("prakriti-tts/prakriti-v1")    # downloads once, then cached
+tts = Prakriti.from_pretrained("anand-k-maurya/prakriti-v1")    # downloads once, then cached
 audio = tts.synthesize("नमस्ते! आपका order कल तक पहुँच जाएगा।", voice="Rasa_F", emotion="happy", intensity=0.8)
 sf.write("out.wav", audio, 24000)
 

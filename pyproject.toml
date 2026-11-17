@@ -38,7 +38,7 @@ dev = ["pytest"]
 prakriti = "prakriti.cli:main"
 
 [project.urls]
-Model = "https://huggingface.co/prakriti-tts/prakriti-v1"
+Model = "https://huggingface.co/anand-k-maurya/prakriti-v1"
 
 [tool.setuptools.packages.find]
 include = ["prakriti*"]

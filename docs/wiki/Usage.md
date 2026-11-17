@@ -75,7 +75,7 @@ few example words; it's probably a rule in `prakriti/text/hindi_g2p.py`.
 Download the model once:
 
 ```bash
-python -c "from huggingface_hub import snapshot_download; print(snapshot_download('prakriti-tts/prakriti-v1'))"
+python -c "from huggingface_hub import snapshot_download; print(snapshot_download('anand-k-maurya/prakriti-v1'))"
 ```
 
 That prints a folder path. Pass it with `-m`, or set `PRAKRITI_MODEL` to it, and no network is needed.

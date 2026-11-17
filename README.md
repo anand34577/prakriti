@@ -8,7 +8,7 @@ The model has 82M parameters: it runs about 2.6x faster than real time on 4 CPU 
 
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-2f6f4f)](LICENSE)
 [![CI](https://github.com/anand34577/prakriti/actions/workflows/ci.yml/badge.svg)](https://github.com/anand34577/prakriti/actions/workflows/ci.yml)
-[![Model on Hugging Face](https://img.shields.io/badge/model-Hugging%20Face-c2741a)](https://huggingface.co/prakriti-tts/prakriti-v1)
+[![Model on Hugging Face](https://img.shields.io/badge/model-Hugging%20Face-c2741a)](https://huggingface.co/anand-k-maurya/prakriti-v1)
 
 <img alt="Generating Hindi and Hinglish speech from the prakriti command line" src="assets/screenshot-cli.png" width="100%">
 
@@ -82,7 +82,7 @@ prakriti --list-voices
 | `-s`, `--speed` | `1.0` | Speaking rate; 0.9 is a little slower |
 | `-p`, `--pitch` | `1.0` | Pitch multiplier on top of the voice's calibrated pitch |
 | `-o`, `--output` | `prakriti.wav` | Output WAV file |
-| `-m`, `--model` | `prakriti-tts/prakriti-v1` | Local model folder or Hugging Face repo id (also `PRAKRITI_MODEL`) |
+| `-m`, `--model` | `anand-k-maurya/prakriti-v1` | Local model folder or Hugging Face repo id (also `PRAKRITI_MODEL`) |
 | `--device` | auto | `cuda` or `cpu` |
 
 ## Voices

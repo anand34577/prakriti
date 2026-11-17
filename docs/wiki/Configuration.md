@@ -14,7 +14,7 @@ arguments, plus one optional environment variable.
 | `-s`, `--speed` | `1.0` | Speaking rate. `0.9` is a little slower, `1.1` a little faster. |
 | `-p`, `--pitch` | `1.0` | Pitch multiplier on top of the voice's calibrated pitch. `0.95` is slightly lower. |
 | `-o`, `--output` | `prakriti.wav` | Where to write the WAV file (24 kHz, mono). |
-| `-m`, `--model` | `prakriti-tts/prakriti-v1` | A local model folder or a Hugging Face repo id. |
+| `-m`, `--model` | `anand-k-maurya/prakriti-v1` | A local model folder or a Hugging Face repo id. |
 | `--device` | auto | `cuda` for an NVIDIA GPU, `cpu` otherwise. Auto picks the GPU if PyTorch can see one. |
 | `--list-voices` | | Print the voices and their emotions, then exit. |
 
